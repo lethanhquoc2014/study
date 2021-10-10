@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Pass Function To Function</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function repeat(n, action)
+            {
+                for (let i = 0; i < n; i++) {
+                    action(i);
+                }
+            }
+            repeat(4, console.log);
+
+            let units = [];
+            function addUnit(unit)
+            {
+                units.push(`Unit ${unit + 1}`);
+            }
+            repeat(2, addUnit);
+            console.log(units);
+
+            let labels = [];
+            repeat(2, label => {
+                labels.push(`Label ${label + 1}`);
+            });
+            console.log(labels);
+        </script>
+    </body>
+</html>

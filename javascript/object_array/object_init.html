@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Object Init</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let employee = {
+                'id': 1243,
+                'name': 'Le Thanh Quoc',
+                'gender': 'male',
+                'languages': ['php', 'javascript']
+            }
+            console.log(employee);
+            console.log(employee.id);
+            console.log(employee.name);
+            console.log(employee.languages);
+            console.log('Type: ' + typeof employee);
+            console.log('name is an attribute of employee: ' + ('name' in employee));
+            console.log('company is an attribute of employee: ' + ('company' in employee));
+            console.log('List attributes:');
+            console.log(Object.keys(employee));
+        </script>
+    </body>
+</html>

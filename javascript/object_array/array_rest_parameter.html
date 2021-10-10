@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Array Rest Parameter</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function max(...numbers)
+            {
+                let result = -Infinity;
+                for (let number of numbers) {
+                    if (number > result) {
+                        result = number;
+                    }
+                }
+                return result;
+            }
+            console.log('Max: ' + max(-1,2,5,100));
+
+            let numbers = [1,2,3];
+            console.log('Max: ' + max(...numbers));
+        </script>
+    </body>
+</html>
