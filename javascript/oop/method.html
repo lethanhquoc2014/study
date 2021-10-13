@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Method</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let rabbit = {};
+            rabbit.speak = function(line) {
+                console.log(`The rabbit says '${line}'`);
+            };
+            rabbit.speak("I'm alive.");
+
+            function say(line)
+            {
+                console.log(`The ${this.type} rabbit says ${line}`);
+            }
+            let whiteRabbit = {type: 'white', say};
+            let hungryRabbit = {type: 'hungry', say};
+            whiteRabbit.say("Oh my ears and whiskers, " + "how late it's getting!");
+            hungryRabbit.say("I could use a carrot right now.");
+            say.call(hungryRabbit, "Burp!");
+        </script>
+    </body>
+</html>

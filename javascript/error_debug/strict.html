@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Strict</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let canYouSpotTheProblem = function() {
+                "use strict";
+                let total = 0;
+                for (counter = 0; counter < 10; counter++) {
+                    total += counter;
+                }
+                console.log("total: " + total);
+            }
+            canYouSpotTheProblem();
+        </script>
+    </body>
+</html>

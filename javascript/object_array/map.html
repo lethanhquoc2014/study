@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Map</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function normalize()
+            {
+                console.log(this.coords.map(n => n / this.length));
+            }
+            normalize.call({coords: [0, 2, 3], length: 5});
+
+            const numbers = [1,2,3,4];
+            const numbers1 = numbers.map(n => n * 2);
+            console.log(numbers);
+            console.log(numbers1);
+        </script>
+    </body>
+</html>
