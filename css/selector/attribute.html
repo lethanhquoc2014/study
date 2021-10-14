@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Attribute Selector</title>
+        <style type="text/css">
+            /* <a> elements with a title attribute */
+            a[title] {
+                color: purple;
+            }
+
+            /* <a> elements with an href matching "https://example.org" */
+            a[href="https://example.org"] {
+                color: green;
+            }
+
+            /* <a> elements with an href containing "example" */
+            a[href*="example"] {
+                font-size: 2em;
+            }
+
+            /* <a> elements with an href ending ".org" */
+            a[href$=".org"] {
+                font-style: italic;
+            }
+
+            /* <a> elements whose class attribute contains the word "logo" */
+            a[class~="logo"] {
+                margin: 8px 0;
+                border: 1px solid blueviolet;
+            }
+
+            div[lang] {
+                font-weight: bold;
+            }
+            div:not([lang]) {
+                text-decoration: line-through;
+            }
+            div[lang~='en-us'] {
+                color: blue;
+            }
+            div[lang='pt'] {
+                color: green;
+            }
+            div[lang|='zh'] {
+                color: red;
+            }
+            div[data-lang='zh-TW'] {
+                color:purple;
+            }
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li><a href="#internal">Internal link</a></li>
+            <li><a href="http://example.com">Example link</a></li>
+            <li><a href="#InSensitive">Insensitive internal link</a></li>
+            <li><a href="http://example.org">Example org link</a></li>
+            <li><a href="https://example.org">Example https org link</a></li>
+            <li><a href="https://example.org" class="logo">Link with class is logo</a></li>
+        </ol>
+
+        <div lang="en-gb en-us en-gb en-au en-nz">Hello World!</div>
+        <div lang="pt">Olá Mundo!</div>
+        <div lang="zh-CN">世界您好！</div>
+        <div lang="zh-TW">世界您好！</div>
+        <div data-lang="zh-TW">世界您好！</div>
+    </body>
+</html>

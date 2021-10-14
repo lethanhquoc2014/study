@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Descendant Combinator Selector</title>
+        <style type="text/css">
+            ul.list li {
+                margin: 2em;
+            }
+            ul.symbol li {
+                list-style-type: disc;
+            }
+            ul.symbol li li {
+                list-style-type: circle;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="list">
+            <li>
+                <div>Item 1</div>
+                <ul>
+                    <li>Subitem A</li>
+                    <li>Subitem B</li>
+                </ul>
+            </li>
+            <li>
+                <div>Item 2</div>
+                <ul>
+                    <li>Subitem A</li>
+                    <li>Subitem B</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="symbol">
+            <li>
+                <div>Item 1</div>
+                <ul>
+                    <li>Subitem A</li>
+                    <li>Subitem B</li>
+                </ul>
+            </li>
+            <li>
+                <div>Item 2</div>
+                <ul>
+                    <li>Subitem A</li>
+                    <li>Subitem B</li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
