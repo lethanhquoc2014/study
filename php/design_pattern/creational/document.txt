@@ -5,3 +5,12 @@ Do đó, mình sẽ thiết kế theo hướng mở rộng có thể thêm nhi�
 + Product: thường có 1 class cha là abstract hoặc interface và nhiều class product con. Mỗi class product con được sử dụng cho 1 class con factory.
 + Khi test thì sẽ gọi các class con factory. Như vậy mình sẽ ko gọi khởi tạo trực tiếp các class product, mà sẽ thực hiện thông qua các class con factory.
 Khi đó class factory nào được thực hiện thì class product tương ứng sẽ được thi hành. Giống như yêu cầu factory (nhà máy) nào làm, thì sẽ tạo ra sản phẩm tương ứng với nhà máy đó.
+
+2. Abstract Factory
+- Là kiểu design pattern được thiết kế để tạo ra một chuỗi các product và các biến thể của product. Ví dụ: các product: chair, sofa, coffeetable.
+Với các biến thể như kiểu cổ điển, kiểu hiện đại, kiểu trang trí.
+- Cũng như Factory Method, thì Abstract Factory cũng có các thuật ngữ:
++ Factory: thường có lớp cha là abstract và các lớp factory con. Với nhiệm vụ chính là tạo ra các product.
++ Product: thường có 1 class cha là abstract hoặc interface và nhiều class product con. Mỗi class product con được sử dụng cho 1 class con factory.
++ Khi test thì sẽ gọi các class con factory. Như vậy mình sẽ ko gọi khởi tạo trực tiếp các class product, mà sẽ thực hiện thông qua các class con factory.
+Khi đó class factory nào được thực hiện thì class product tương ứng sẽ được thi hành. Giống như yêu cầu factory (nhà máy) nào làm, thì sẽ tạo ra sản phẩm tương ứng với nhà máy đó.
