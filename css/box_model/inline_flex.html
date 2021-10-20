@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Inline Flex</title>
+        <style type="text/css">
+            p, ul {
+                border: 2px solid blueviolet;
+                padding: .5em;
+            }
+            .block, li {
+                border: 2px solid blue;
+                padding: .5em;
+            }
+            ul {
+                display: inline-flex;
+                list-style: none;
+            }
+            .inline {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <p>I am a paragraph. A short one.</p>
+        <ul>
+            <li>Item One</li>
+            <li>Item Two</li>
+            <li>Item Three</li>
+        </ul>
+        <p class="inline">Paragraph inline</p>
+        <p>I am another paragraph. Some of the <span>words</span> have been wrapped in a <span>span element</span>.</p>
+    </body>
+</html>
