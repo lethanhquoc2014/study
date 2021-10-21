@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Writing Mode</title>
+        <style type="text/css">
+            span, div {
+                border: 2px solid dodgerblue;
+                margin: 10px;
+                padding: 10px;
+            }
+            .vertical-rl {
+                writing-mode: vertical-rl;
+            }
+            .vertical-lr {
+                writing-mode: vertical-lr;
+            }
+            .horizontal-tb {
+                writing-mode: horizontal-tb;
+            }
+        </style>
+    </head>
+    <body>
+        <span class="vertical-rl">
+            <p>So the writing-mode property is in reality setting the direction in which block-level elements are displayed on the page</p>
+            <p>— either from top-to-bottom, right-to-left, or left-to-right. </p>
+            <p>This then dictates the direction text flows in sentences.</p>
+        </span>
+        <span class="vertical-lr">
+            <p>So the writing-mode property is in reality setting the direction in which block-level elements are displayed on the page</p>
+            <p>— either from top-to-bottom, right-to-left, or left-to-right. </p>
+            <p>This then dictates the direction text flows in sentences.</p>
+        </span>
+        <div class="horizontal-tb">
+            So the writing-mode property is in reality setting the direction in which block-level elements are displayed on the page
+            — either from top-to-bottom, right-to-left, or left-to-right.
+            This then dictates the direction text flows in sentences.
+        </div>
+    </body>
+</html>
