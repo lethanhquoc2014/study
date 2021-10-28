@@ -1,12 +1,14 @@
 <?php
-interface Builder
+interface IBuilder
 {
-    public function productPartA();
-    public function productPartB();
-    public function productPartC();
+    public function createProductPartA(): void;
+    public function createProductPartB(): void;
+    public function createProductPartC(): void;
+    public function getProduct(): Product;
+    public function reset(): void;
 }
 
-class ConcreteBuilder1 implements Builder
+class ConcreteBuilder implements IBuilder
 {
     private $product;
 
@@ -15,42 +17,47 @@ class ConcreteBuilder1 implements Builder
         $this->reset();
     }
 
-    public function reset()
+    public function createProductPartA(): void
     {
-        $this->product = new Product1();
+        $this->product->addPart('PartA');
     }
 
-    public function productPartA(): void
+    public function createProductPartB(): void
     {
-        $this->product->parts[] = "PartA1";
+        $this->product->addPart('PartB');
     }
 
-    public function productPartB(): void
+    public function createProductPartC(): void
     {
-        $this->product->parts[] = "PartB1";
+        $this->product->addPart('PartC');
     }
 
-    public function productPartC(): void
-    {
-        $this->product->parts[] = "PartC1";
-    }
-
-    public function getProduct()
+    public function getProduct(): Product
     {
         $result = $this->product;
         $this->reset();
-
+        
         return $result;
+    }
+
+    public function reset(): void
+    {
+        $this->product = new Product();
     }
 }
 
-class Product1
+class Product
 {
-    public $parts = [];
+    private $parts = [];
 
-    public function listParts()
+    public function addPart(string $part): void
     {
-        echo "Product parts: " . implode(', ', $this->parts) . "\n\n";
+        $this->parts[] = $part;
+    }
+
+    public function getParts(): array
+    {
+        return $this->parts;
     }
 }
 
@@ -58,43 +65,44 @@ class Director
 {
     private $builder;
 
-    public function setBuilder(Builder $builder)
+    public function setBuilder(IBuilder $builder)
     {
         $this->builder = $builder;
     }
 
-    public function buildMinimalViableProduct()
+    public function buildMinimumPart(): void
     {
-        $this->builder->productPartA();
+        $this->builder->createProductPartA();
     }
 
-    public function buildFullFeaturedProduct()
+    public function buildFullPart(): void
     {
-        $this->builder->productPartA();
-        $this->builder->productPartB();
-        $this->builder->productPartC();
+        $this->builder->createProductPartA();
+        $this->builder->createProductPartB();
+        $this->builder->createProductPartC();
     }
 }
 
-function clientCode(Director $director)
+function clien_code(Director $director)
 {
-    $builder = new ConcreteBuilder1();
-    $director->setBuilder($builder);
+    $concrete = new ConcreteBuilder();
+    $director->setBuilder($concrete);
 
-    echo "Standard basic product:\n";
-    $director->buildMinimalViableProduct();
-    $builder->getProduct()->listParts();
+    echo "Build minimum parts: ";
+    $director->buildMinimumPart();
+    echo implode(",", $concrete->getProduct()->getParts());
+    echo "\n";
 
-    echo "Standard full featured product:\n";
-    $director->buildFullFeaturedProduct();
-    $builder->getProduct()->listParts();
+    echo "Build full parts: ";
+    $director->buildFullPart();
+    echo implode(",", $concrete->getProduct()->getParts());
+    echo "\n";
 
-    // Remember, the Builder pattern can be used without a Director class.
-    echo "Custom product:\n";
-    $builder->productPartA();
-    $builder->productPartC();
-    $builder->getProduct()->listParts();
+    echo "Build custom parts: ";
+    $concrete->createProductPartA();
+    $concrete->createProductPartC();
+    echo implode(",", $concrete->getProduct()->getParts());
+    echo "\n";
 }
 
-$director = new Director();
-clientCode($director);
+clien_code(new Director());
