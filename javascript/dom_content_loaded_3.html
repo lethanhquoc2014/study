@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>DOM content loaded</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                const body = document.querySelector('body');
+
+                const panel = document.createElement('div');
+                panel.setAttribute('class', 'msgBox');
+                panel.style.backgroundColor = "red";
+                body.appendChild(panel);
+
+                const msg = document.createElement('p');
+                msg.textContent = "This is a message box";
+                panel.appendChild(msg);
+
+                const btnClose = document.createElement('button');
+                btnClose.textContent = 'x';
+                panel.appendChild(btnClose);
+
+                btnClose.addEventListener('click', function() {
+                    panel.removeChild(msg);
+                });
+            });
+        </script>
+    </body>
+</html>

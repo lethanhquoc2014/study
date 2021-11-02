@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">
+            const person = {
+                name: {
+                    firstname: 'Bob',
+                    lastname: 'Smith'
+                },
+                age: 32,
+                gender: 'male',
+                interests: ['music', 'skiing'],
+                bio: function() {
+                    return this.name.firstname + ' ' + this.name.lastname + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.';
+                },
+                greeting: function() {
+                    return 'Hi! I\'m ' + this.name.firstname + '.';
+                }
+            };
+            person.name.firstname = 'Nam';
+            const bio = document.createElement('div');
+            bio.textContent = person.bio();
+            document.body.appendChild(bio);
+        
+            const greeting = document.createElement('div');
+            greeting.textContent = person.greeting();
+            document.body.appendChild(greeting);
+        </script>
+    </body>
+</html>
