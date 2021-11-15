@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                border: 2px solid firebrick;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .cover {
+                object-fit: cover;
+            }
+            .contain {
+                object-fit: contain;
+            }
+            .fill {
+                object-fit: fill;
+            }
+            .scale-down {
+                object-fit: scale-down;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"><img src="star.png" class="cover"></div>
+        <div class="box"><img src="star.png" class="contain"></div>
+        <div class="box"><img src="star.png" class="fill"></div>
+        <div class="box"><img src="star.png" class="scale-down"></div>
+
+        <div class="box"><img src="balloons.jpg" class="cover"></div>
+        <div class="box"><img src="balloons.jpg" class="contain"></div>
+        <div class="box"><img src="balloons.jpg" class="fill"></div>
+        <div class="box"><img src="balloons.jpg" class="scale-down"></div>
+    </body>
+</html>

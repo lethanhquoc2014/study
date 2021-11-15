@@ -36,3 +36,7 @@ FROM
 	mysql_test_char
 WHERE
 	status = ' c'
+
+/*
+Kiểu CHAR có tối đa 255 ký tự
+*/
