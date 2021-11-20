@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <div>Color code: </div>
+        <button>Change color</button>
+        <p>sự kiện onblur chính là unfocused</p>
+
+        <script type="text/javascript">
+            const btn = document.querySelector('button');
+            const div = document.querySelector('div');
+
+            function random(number)
+            {
+                return Math.floor(Math.random() * number);
+            }
+
+            btn.onmouseover = function() {
+                const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                document.body.style.backgroundColor = rndCol;
+                div.textContent = 'Color code: ' + rndCol;
+            }
+        </script>
+    </body>
+</html>

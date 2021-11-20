@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Descendant Combinator Selector</title>
+        <style type="text/css">
+            span {
+                color: red;
+            }
+            div > span {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <span>It matches only those elements matched</span>
+        <div>
+            <span>that are the direct children of elements matched<span>999999</span></span><br>
+            <span>matched by the second selector must be the immediat</span><br>
+            <span>matched by the second selector must be the immediat</span>
+        </div>
+    </body>
+</html>
