@@ -1,0 +1,15 @@
+There are 3 ways to create object:
+
+1. basic
+const person = {
+
+}
+
+2. use by constructor
+functon Person()
+{
+
+}
+
+3. use Object key
+let person1 = new Object({})

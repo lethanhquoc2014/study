@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">
+            function Person(name)
+            {
+                this.name = name;
+                this.greeting = function() {
+                    return 'Hi! I\'m ' + this.name + '.';
+                }
+            }
+
+            let person1 = new Person('Quoc');
+            let person2 = new Person('Trang');
+            let person3 = new Person('An');
+
+            const div1 = document.createElement('div');
+            const div2 = document.createElement('div');
+            const div3 = document.createElement('div');
+
+            div1.textContent = person1.greeting();
+            div2.textContent = person2.greeting();
+            div3.textContent = person3.greeting();
+
+            document.body.appendChild(div1);
+            document.body.appendChild(div2);
+            document.body.appendChild(div3);
+        </script>
+    </body>
+</html>

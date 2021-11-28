@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">
+            function Human(first, last, age, gender, interests)
+            {
+                this.name = {
+                    first,
+                    last
+                };
+                this.age = age;
+                this.gender = gender;
+                this.interests = interests;
+            }
+            Human.prototype.greeting = function() {
+                alert('Hi! I\'m ' + this.name.first + '.');
+            }
+            
+            // let human = new Human('Quoc', 'Le', 34, 'Nam', 'book');
+            // human.greeting();
+
+            function Teacher(first, last, age, gender, interests, subject)
+            {
+                Human.call(this, first, last, age, gender, interests);
+                this.subject = subject;
+            }
+            let teacher = new Teacher('Quoc', 'Le', 34, 'Nam', 'book', 'it');
+            console.log(teacher);
+            console.log(Teacher.prototype);
+            Teacher.prototype = Object.create(Human.prototype);
+        </script>
+    </body>
+</html>

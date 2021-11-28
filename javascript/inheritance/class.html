@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">
+            class Human
+            {
+                constructor(first, last, age, gender, interests)
+                {
+                    this.name = {
+                        first,
+                        name
+                    };
+                    this.age = age;
+                    this.gender = gender;
+                    this.interests = interests;
+                }
+
+                greeting = function()
+                {
+                    console.log('Hi! I\'m ' + this.name.first + '.');
+                }
+            }
+            let human = new Human('Quoc', 'Le', 34, 'Nam', ['Book', 'Music']);
+            human.greeting();
+
+            class Teacher extends Human
+            {
+                constructor(first, last, age, gender, interests, subject)
+                {
+                    super(first, last, age, gender, interests);
+                    this.subject = subject;
+                }
+                set subject(newSubject)
+                {
+                    this._subject = newSubject;
+                }
+                get subject()
+                {
+                    return this._subject;
+                }
+            }
+            let teacher = new Teacher('Trang', 'Nguyen', 34, 'Nu', ['Book', 'Music'], 'Javascipt');
+            teacher.greeting();
+            teacher.subject = 'English';
+            console.log('Year: ' + teacher.subject);
+            console.log(teacher);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">
+            function Brick()
+            {
+                this.width = 100;
+                this.height = 100;
+            }
+
+            function BlueGlassBrick()
+            {
+                Brick.call(this);
+                this.opacity = 0.5;
+                this.color = 'blue';
+            }
+
+            console.log(new BlueGlassBrick());
+        </script>
+    </body>
+</html>
