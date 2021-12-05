@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+            .wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: DodgerBlue;
+            }
+            .row {
+                flex-direction: row;
+            }
+            .row-reverse {
+                flex-direction: row-reverse;
+            }
+            .column {
+                flex-direction: column;
+            }
+            .column-reverse {
+                flex-direction: column-reverse;
+            }
+            .wrapper > div {
+                background-color: #f1f1f1;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>flex-direction: row</h1>
+        <div class="wrapper row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h1>flex-direction: row-reverse</h1>
+        <div class="wrapper row-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h1>flex-direction: column</h1>
+        <div class="wrapper column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h1>flex-direction: column-reverse</h1>
+        <div class="wrapper column-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+    </body>
+</html>
