@@ -1,0 +1,22 @@
+<html>
+    <head></head>
+    <body>
+        <button>Run</button>
+        <script type="text/javascript">
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', () => {
+                let myDate;
+                for (let i = 0; i < 20000000; i++) {
+                    let date = new Date();
+                    myDate = date;
+                }
+
+                console.log(myDate);
+
+                let p = document.createElement('p');
+                p.textContent = 'This is a newly-added paragraph.';
+                document.body.appendChild(p);
+            })
+        </script>
+    </body>
+</html>
