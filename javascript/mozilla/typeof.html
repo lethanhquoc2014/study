@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function multiply(multiplier, ...args) {
+                return args.map(x => multiplier * x);
+            }
+            
+            var func = multiply(1,2,3);
+            var str = '123';
+            var num = 123;
+            var mybool = true;
+            var date = new Date();
+            var mynull = null;
+
+            console.log(typeof func); // object
+            console.log(typeof str); // string
+            console.log(typeof num); // number
+            console.log(typeof mybool); // boolean
+            console.log(typeof date); // object
+            console.log(typeof mynull); // object
+        </script>
+    </body>
+</html>

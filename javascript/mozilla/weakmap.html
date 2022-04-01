@@ -1,0 +1,11 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let weak_map = new WeakMap();
+            let obj = {};
+            weak_map.set(obj, 'abc');
+            console.log(weak_map.get(obj));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let sayings = new Map();
+            sayings.set('dog', 'woof');
+            sayings.set('cat', 'meow');
+            sayings.set('elephant', 'toot');
+            
+            for (let [key, value] of sayings) {
+                console.log(key + ' goes ' + value);
+            }
+            sayings.forEach(function(value, key) {
+                console.log(key + ' goes ' + value);
+            });
+            console.log(sayings.size); // 3
+            console.log(sayings.get('dog')); // woof
+            console.log(sayings.has('dog')); // true
+            console.log(sayings.has('abc')); // false
+            sayings.delete('dog');
+            console.log(sayings.get('dog')); // undefined
+            console.log(sayings.size); // 2
+            sayings.clear();
+            console.log(sayings.size); // 0
+
+            let map = new Map();
+            let key = 'name';
+            let value = 'Quoc';
+            map.set(key, value);
+            console.log(map.get(key)); // Quoc
+            key = null;
+            console.log(map.get('name')); // Quoc
+        </script>
+    </body>
+</html>

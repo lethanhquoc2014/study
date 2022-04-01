@@ -1,0 +1,15 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            const typedArray = new Uint8Array([8,6,7]);
+            console.log(typedArray.length); // 3
+            console.log(typedArray[0]); // 8
+            console.log(typedArray[1]); // 6
+            console.log(typedArray[2]); // 7
+
+            const dataView = new DataView(typedArray.buffer);
+            console.log(dataView.getUint8(1));
+        </script>
+    </body>
+</html>

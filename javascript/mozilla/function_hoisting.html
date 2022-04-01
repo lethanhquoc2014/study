@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            foo();
+            function foo() {
+                console.log('foo');
+            }
+
+            baz();
+            var baz = function() {
+                console.log('baz'); // Uncaught TypeError: baz is not a function
+            }
+        </script>
+    </body>
+</html>
