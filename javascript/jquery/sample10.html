@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <style type="text/css">
+            body.large {
+                font-size: 1.5em;
+            }
+            body.narrow {
+                width: 350px;
+            }
+            .selected {
+                font-weight: bold;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="switcher" class="switcher">
+            <h3>Style Switcher</h3>
+            <button id="switcher-default">
+              Default
+            </button>
+            <button id="switcher-narrow">
+              Narrow Column
+            </button>
+            <button id="switcher-large">
+              Large Print
+            </button>
+        </div>
+        <p>However, we want this to occur when the button is clicked, not when the page is loaded as we have seen so far. To do this, we'll introduce the .on() method. This method allows us to specify any DOM event and to attach a behavior to it. In this case, the event is called click, and the behavior is a function consisting of our previous one-liner:</p>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#switcher').click(function() {
+                    $('#switcher button').toggleClass('hidden');
+                });
+
+                $('#switcher button').on('click', function(e) {
+                    // e.stopPropagation();
+                    var bodyClass = this.id.split('-')[1];
+                    $('body').removeClass().addClass(bodyClass);
+                    $('#switcher button').removeClass('selected');
+                    $(this).addClass('selected');
+                });
+
+                $('#switcher-narrow, #switcher-large').click(function() {
+                    $('#switcher').off('click');
+                });
+            });
+        </script>
+    </body>
+</html>
