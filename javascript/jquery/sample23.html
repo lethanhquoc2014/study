@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <style type="text/css">
+        
+        </style>
+    </head>
+    <body>
+        <div id="footer">Footer</div>
+        <span class="footnote">abc</span>
+        <span class="footnote">xyz</span>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var $notes = $('<ol id="notes"></ol>').insertBefore('#footer');
+                $('span.footnote').each(function(index) {
+                    $(this).appendTo($notes).wrap('<li></li>');
+                });
+            });
+        </script>
+    </body>
+</html>

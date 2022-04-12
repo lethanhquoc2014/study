@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <style type="text/css">
+        
+        </style>
+    </head>
+    <body>
+        <div class="speech">
+            <p>Fourscore and seven years ago our fathers brought forth
+                 on this continent a new nation, conceived in liberty,
+                 and dedicated to the proposition that all men are
+                 created equal.
+            </p>
+            <p>Now we are engaged in a great civil war, testing whether
+                 that nation, or any nation so conceived and so dedicated,
+                 can long endure. We are met on a great battlefield of
+                 that war. We have come to dedicate a portion of that
+                 field as a final resting-place for those who here gave
+                 their lives that the nation might live. It is altogether
+                 fitting and proper that we should do this. But, in a
+                 larger sense, we cannot dedicate, we cannot consecrate,
+                 we cannot hallow, this ground.
+            </p>
+            <a href="#" class="more">read more</a>...
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var firstPara = $('p').eq(1);
+                firstPara.hide();
+
+                $('a.more').click(function(event) {
+                    event.preventDefault();
+                    firstPara.slideToggle('slow');
+
+                    var link = $(this);
+                    if (link.text() == 'read more') {
+                        link.text('read less');
+                    } else {
+                        link.text('read more');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
