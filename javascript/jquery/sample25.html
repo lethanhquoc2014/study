@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style type="text/css">
+            .pulled {
+                position: absolute;
+                width: 120px;
+                top: -20px;
+                right: -180px;
+                padding: 20px;
+                font: italic 1.2em "Times New Roman", Times, serif;
+                background: #e5e5e5;
+                border: 1px solid #999;
+                border-radius: 8px;
+                box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <span class="pull-quote">It is a Law of Nature
+            <span class="drop">with us</span> that a male child shall
+            have <strong>one more side</strong> than his father</span>,
+            so that each generation shall rise (as a rule) one step in
+            the scale of development and nobility. Thus the son of a
+            Square is a Pentagon; the son of a Pentagon, a Hexagon; and
+            so on.
+        </p>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('span.pull-quote').each(function(index) {
+                    var parentPara = $(this).parent('p');
+                    parentPara.css('position', 'relative');
+
+                    var clonedCopy = $(this).clone();
+                    clonedCopy
+                        .addClass('pulled')
+                        .find('span.drop')
+                            .html('&hellip;')
+                        .end()
+                        .text(clonedCopy.text())
+                        .prependTo(parentPara);
+                })
+            });
+        </script>
+    </body>
+</html>
