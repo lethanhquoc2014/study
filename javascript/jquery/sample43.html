@@ -21,6 +21,9 @@
                     var formValues = $(this).serialize();
                     $.get('sample43.php', formValues, function(data) {
                         $('#container').html(data);
+                    }).fail(function(jqXHR) {
+                        console.log(jqXHR);
+                        $('#container').html('An error occurred: ' + jqXHR.status).append(jqXHR.responseText);
                     });
                 })
             });
