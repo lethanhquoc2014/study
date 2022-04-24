@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('<ul></ul>')
+                    .append('<li><a>jquery.com</a></li><li><a>jquery documentation</a></li>')
+                    .find('a:first')
+                    .attr('href', 'http://www.jquery.com')
+                    .end()
+                    .find('a:eq(1)')
+                    .attr('href', 'https://learn.jquery.com/')
+                    .end()
+                    .find('a')
+                    .click(function(event) {
+                        event.preventDefault();
+                        return confirm('Leave this page?'); 
+                    })
+                    .end()
+                    .appendTo('body');
+            });
+        </script>
+    </body>
+</html>

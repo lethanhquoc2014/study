@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <a title="jQuery">jQuery.com</a>
+        <a href="http://www.jquery.com" title="jQuery" class="foo">jQuery.com 1</a>
+        <a href="">jQuery.com</a>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                alert($('a[title="jQuery"][href^="http://"]').length);
+            });
+        </script>
+    </body>
+</html>
