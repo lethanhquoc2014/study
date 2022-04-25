@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="parent2">
+            <div id="parent1">
+                <div id="parent0">
+                    <div id="start"></div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('<div></div>').html($('#start').parent().attr('id')).appendTo('body');
+                $('<div></div>').html($('#start').parents('#parent0').attr('id')).appendTo('body');
+                $('<div></div>').html($('#start').parents()[0].id).appendTo('body');
+
+                $('<div></div>').html($('#start').closest('#parent2').attr('id')).appendTo('body');
+                console.log($('#start').parents());
+                console.log($('#start').parent());
+                console.log($('#start').closest());
+            });
+        </script>
+    </body>
+</html>

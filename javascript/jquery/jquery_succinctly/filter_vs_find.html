@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="Fruits">
+            Fruits
+            <div id="Apple">Apple</div>
+            <div id="Banana">Banana</div>
+        </div>
+        
+        <div id="Category">
+            Category
+            <div id="Fruits">Fruits</div>
+            <div id="Animals">Animals</div>
+        </div>
+        
+        <br/>
+        <br/>
+        <br/>
+        
+        <input type='button' value="filter" id='filterClick'>
+        <input type='button' value="find" id='findClick'>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#filterClick').click(function() {
+                    $('div').css('background', 'white');
+                    $('div').filter('#Fruits').css('background', 'red');
+                });
+                $('#findClick').click(function() {
+                    $('div').css('background', 'white');
+                    $('div').find('#Fruits').css('background', 'blue');
+                });
+            });
+        </script>
+    </body>
+</html>

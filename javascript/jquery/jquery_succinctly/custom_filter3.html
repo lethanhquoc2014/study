@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <img />
+        <img />
+        <p>
+            <img />
+        </p>
+        <img />
+        <p>
+            <img />
+        <p>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('img').attr('src', 'http://static.jquery.com/files/rocker/images/logo_jquery_215x53.gif')
+                    .find(function() {
+                        return !$(this).parent('p').length == 1
+                    })
+                    .wrap('<p><p/>');
+            });
+        </script>
+    </body>
+</html>
