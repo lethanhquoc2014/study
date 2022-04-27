@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <input type="text" value="click me" />
+        <br /> <br />
+        <button>remove events</button>
+        <div id="log" name="log"></div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('input').bind('click', function() {
+                    alert('You clicked me!');
+                });
+                $('input').bind('focus', function() {
+                    $('#log').html('You focused this input!');
+                });
+                $('button').click(function() {
+                    $('input').unbind('click');
+                    $('input').unbind('focus');
+                    $('#log').html('');
+                });
+            });
+        </script>
+    </body>
+</html>
