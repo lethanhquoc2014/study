@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <style>
+            div {
+                width: 300px;
+                height: 100px;
+            }
+            .red {
+                background-color: red;
+            }
+            .blue {
+                background-color: blue;
+            }
+            .yellow {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('<div>Click me!</div>')
+                    .addClass('red')
+                    .on({
+                        click: function() {
+                            $(this).removeClass().addClass('blue');
+                        },
+                        mouseout: function() {
+                            $(this).removeClass().addClass('yellow');
+                        }
+                    })
+                    .appendTo('body');
+            });
+        </script>
+    </body>
+</html>

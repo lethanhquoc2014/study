@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var foo = function(value) {
+                    console.log("foo: " + value);
+                };
+
+                var callbacks = $.Callbacks();
+                
+                callbacks.add(foo);
+                callbacks.fire("Hello");
+
+                callbacks.disable();
+                callbacks.fire("world");
+            });
+        </script>
+    </body>
+</html>
