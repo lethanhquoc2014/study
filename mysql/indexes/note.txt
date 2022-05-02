@@ -1,2 +1,0 @@
-primary, unique key: được gọi là clustered index.
-Những index còn lại được gọi à non-clustered index hoặc secondary indexes
