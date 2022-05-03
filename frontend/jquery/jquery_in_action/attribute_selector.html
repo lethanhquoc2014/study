@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery in Action, 3rd edition</title>
+        <link rel="stylesheet" href="css/main.css"/>
+        <style>
+            div {
+                width: 100%;
+                height: 20px;
+                margin: 10px 0;
+            }
+            .red {
+                background-color: red;
+            }
+            .blue {
+                background-color: blue;
+            }
+            .yellow {
+                background-color: yellow;
+            }
+            .green {
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="red" id="red"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+        <div class="red blue green"></div>
+        <div class="empty-msg"></div>
+        <div class="empty_data"></div>
+
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                console.log($('div[class]')); // lấy tất cả thẻ div có thuộc tính class
+                console.log($('div[class="red"]')); // lấy tất cả thẻ div có class=red
+                console.log($('div[class^="red"]')); // lấy tất cả thẻ div có class bắt đầu là red
+                console.log($('div[class$="green"]')); // lấy tất cả thẻ div có class kết thúc là green
+                console.log($('div[class!="red"]')); // lấy tât cả thẻ div có class không phải là red
+                console.log($('div[class*="red blue"]')); // lấy tất cả thẻ div có class có chứa red blue
+                console.log($('div[class|="empty"]')); // lấy tất cả thẻ div có class là empty hoặc empty-
+                console.log($('div[class~="blue"]')); // lấy tất cả thẻ div có class là blue hoặc blue với khoảng trắng 
+                console.log($('div[class="red"][id="red"]')); // lấy thẻ div có class=red và id=red
+            });
+        </script>
+   </body>
+</html>

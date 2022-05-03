@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery in Action, 3rd edition</title>
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <h1>Form Filter</h1>
+        <div id="defination">
+            <strong>:contains(text)</strong>: Selects only elements containing the specified text (the text of the children and the descendants is also evaluated).
+            <p><strong>:empty</strong>: Selects only elements that have no children (including text nodes).</p>
+        </div>
+        <div id="image"><img src="images/photos/img_1.jpg" alt=""></div>
+        <div id="note"></div>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                console.log($('div:contains("including")'));
+                console.log($('div:contains("Selects")').length);
+                console.log($('div:has("strong")'));
+                console.log($('div:empty'));
+                console.log($('p:parent'));
+                console.log($('div:has(img[src$="img_1.jpg"])'));
+            });
+        </script>
+   </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery in Action, 3rd edition</title>
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <table id="languages">
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Type</th>
+                    <th>Invented</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Java</td>
+                    <td>Static</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>Ruby</td>
+                    <td>Dynamic</td>
+                    <td>1993</td>
+                </tr>
+                <tr>
+                    <td>Smalltalk</td>
+                    <td>Dynamic</td>
+                    <td>1972</td>
+                </tr>
+                <tr>
+                    <td>C++</td>
+                    <td>Static</td>
+                    <td>1983</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <span>Corey,</span>
+            <span>Yehuda,</span>
+        </div>
+        <div>
+            <span>Adam,</span>
+            <span>Todd</span>
+        </div>
+        <div>
+            <p>pragraph</p>
+        </div>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                console.log($('tr td:first-child').text());
+                console.log($('tr td:last-child').text());
+                
+                console.log($('div span:first-of-type').text());
+                console.log($('div span:last-of-type').text());
+
+                console.log($('table td:nth-child(1)').text());
+                console.log($('table td:nth-child(even)').text());
+                console.log($('table td:nth-child(odd)').text());
+                console.log($('table td:nth-child(2n+1)').text());
+
+                console.log($('table td:nth-last-child(1)').text());
+                console.log($('table td:nth-last-child(even)').text());
+                console.log($('table td:nth-last-child(odd)').text());
+                console.log($('table td:nth-last-child(2n+1)').text());
+
+                console.log($('table td:nth-last-of-type(1)').text());
+                console.log($('table td:nth-last-of-type(even)').text());
+                console.log($('table td:nth-last-of-type(odd)').text());
+
+                console.log($('div p:only-child').text());
+
+                console.log($('div p:only-of-type').text());
+            });
+        </script>
+   </body>
+</html>

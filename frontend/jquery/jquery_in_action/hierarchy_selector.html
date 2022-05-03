@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery in Action, 3rd edition</title>
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <div id="div-1">Div 1</div>
+        <div id="div-2">
+            <div id="sub-div-1">Sub div 1</div>
+            <div id="sub-div-2">Sub div 2
+                <div id="sub-sub-div-2">Sub sub div 2</div>
+            </div>
+            <p id="paragraph">Paragrap</p>
+        </div>
+        <div id="div-3">Div 3</div>
+        <div id="div-4">Div 4</div>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var $descendants = $('div#div-2 div'); // lấy tất cả thẻ div con, cháu, chắt
+                console.log($descendants);
+
+                var $direct_children = $('div#div-2 > div,p'); // lấy tất cả thẻ con div, p
+                console.log($direct_children);
+
+                var $immediately_preceded_sibling = $('div#div-2 + div'); // lấy 1 thẻ div anh em kế tiếp với div#div-2
+                console.log($immediately_preceded_sibling);
+
+                var $preceded_sibling = $('div#div-2 ~ div');// lấy tất cả thẻ div anh em tiếp theo với div#div-2
+                console.log($preceded_sibling);
+            });
+        </script>
+   </body>
+</html>
